@@ -41,17 +41,23 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Center(
           //padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 15.0),
           child: Container(
-              width: 400,
-              height: 300,
-              color: Color.fromARGB(255, 214, 138, 138),
-              //direction: Axis.vertical,
-              //children: <Widget>[
+              width: MediaQuery.of(context).size.width / 1.5,
+              height: MediaQuery.of(context).size.height / 2,
+              color: Color.fromARGB(255, 177, 209, 219).withOpacity(1),
               child: Flex(direction: Axis.vertical, children: <Widget>[
                 Form(
                   key: _key,
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
+                        const SizedBox(height: 10),
+                        const Text(
+                          "Login",
+                          style: TextStyle(
+                              fontSize: 25,
+                              color: Color.fromARGB(255, 109, 108, 108)),
+                        ),
+                        const SizedBox(height: 10),
                         Padding(
                           padding: const EdgeInsets.all(16.0),
                           child: TextFormField(
@@ -88,15 +94,16 @@ class _MyHomePageState extends State<MyHomePage> {
                           padding: const EdgeInsets.symmetric(vertical: 16.0),
                           child: ElevatedButton(
                               onPressed: () {
-                                if (_key.currentState!.validate()) {}
+                                if (_key.currentState!.validate()) {
+                                  // MyDialog.of(context).toast('Hello World',
+                                  // style: MyDialog.theme.toastStyle?.top());
+                                }
                               },
                               child: Text("Start")),
                         )
                       ]),
                 )
-              ])
-              //],
-              ),
+              ])),
         ));
   }
 }
