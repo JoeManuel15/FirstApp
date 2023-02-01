@@ -41,6 +41,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.17.0"
+  combined_animation:
+    dependency: transitive
+    description:
+      name: combined_animation
+      sha256: "9fd82e9ba0da1733a8393fc3a39ef213619810dfa0fc07106a52f2c691d09ca7"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.1"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -123,6 +131,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.2"
+  shirne_dialog:
+    dependency: "direct main"
+    description:
+      name: shirne_dialog
+      sha256: "700cc0fb5d77777845e10f1d64d76715713042c5b19bba774a1cbb4d8aa3fec4"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.4.3"
   sky_engine:
     dependency: transitive
     description: flutter
