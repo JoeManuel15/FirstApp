@@ -10,11 +10,12 @@ class SecondRoute extends StatelessWidget {
         title: const Text('Second Route'),
       ),
       body: Center(
-        child: ElevatedButton(
+        child: ElevatedButton.icon(
           onPressed: () {
             // Navigate back to first route when tapped.
           },
-          child: const Text('Go back!'),
+          icon: const Icon(Icons.send),
+          label: const Text('Result!'),
         ),
       ),
     );
