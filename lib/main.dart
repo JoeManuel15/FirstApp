@@ -1,4 +1,4 @@
-import '../SecondRoute.dart';
+import 'second_route.dart';
 import 'package:flutter/material.dart';
 import 'package:shirne_dialog/shirne_dialog.dart';
 
@@ -55,8 +55,11 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Container(
                   width: MediaQuery.of(context).size.width / 1.5,
                   height: MediaQuery.of(context).size.height / 2,
-                  color:
-                      const Color.fromARGB(255, 177, 209, 219).withOpacity(1),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: const Color.fromARGB(255, 233, 233, 233)
+                        .withOpacity(0.7),
+                  ),
                   child: Flex(direction: Axis.vertical, children: <Widget>[
                     Form(
                       key: _key,
@@ -68,13 +71,19 @@ class _MyHomePageState extends State<MyHomePage> {
                               "Login",
                               style: TextStyle(
                                   fontSize: 25,
-                                  color: Color.fromARGB(255, 109, 108, 108)),
+                                  color: Color.fromARGB(255, 63, 62, 62)),
                             ),
                             const SizedBox(height: 10),
                             Padding(
                               padding: const EdgeInsets.all(16.0),
                               child: TextFormField(
                                 decoration: const InputDecoration(
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        color:
+                                            Color.fromARGB(255, 100, 100, 100),
+                                        width: 2.0),
+                                  ),
                                   border: OutlineInputBorder(),
                                   icon: Icon(Icons.email),
                                   hintText: 'E-Mail',
@@ -91,13 +100,19 @@ class _MyHomePageState extends State<MyHomePage> {
                               padding: const EdgeInsets.all(16.0),
                               child: TextFormField(
                                 decoration: const InputDecoration(
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        color:
+                                            Color.fromARGB(255, 100, 100, 100),
+                                        width: 2.0),
+                                  ),
                                   border: OutlineInputBorder(),
-                                  icon: Icon(Icons.phone),
-                                  hintText: 'Number',
+                                  icon: Icon(Icons.password),
+                                  hintText: 'Contraseña',
                                 ),
                                 validator: (String? value) {
                                   if (value == null || value.isEmpty) {
-                                    return "Numero no valido";
+                                    return "Contraseña no valida";
                                   }
                                   return null;
                                 },
