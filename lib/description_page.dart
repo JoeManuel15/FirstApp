@@ -1,7 +1,7 @@
 import '../pokemon.dart';
 import 'package:flutter/material.dart';
 
-// Search Page
+// Description Page
 class DescriptionPokemon extends StatelessWidget {
   const DescriptionPokemon({super.key, required this.pokemon});
 

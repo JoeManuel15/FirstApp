@@ -1,4 +1,4 @@
-import 'second_route.dart';
+import 'pokemons_page.dart';
 import 'package:flutter/material.dart';
 import 'package:shirne_dialog/shirne_dialog.dart';
 
@@ -61,12 +61,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
-                            const SizedBox(height: 10),
+                            const SizedBox(height: 15),
                             const Text(
                               "Login",
                               style: TextStyle(
                                   fontSize: 25,
-                                  color: Color.fromARGB(255, 63, 62, 62)),
+                                  color: Color.fromARGB(255, 63, 62, 62),
+                                  fontWeight: FontWeight.bold),
                             ),
                             const SizedBox(height: 10),
                             Padding(
@@ -126,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                const SecondRoute()),
+                                                const PokemonPage()),
                                       );
                                     }
                                   },

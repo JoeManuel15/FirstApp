@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import '../description_page.dart';
+
 class Pokemon {
   String number, name, image, description;
   Pokemon(
@@ -63,3 +66,77 @@ List<Pokemon> pokemons = [
       description:
           "Para acabar con su enemigo, lo aplasta con el peso de su cuerpo. En momentos de apuro, se esconde en el caparazón."),
 ];
+
+Widget pokemosCard(BuildContext context, List<Pokemon> listPokemons) {
+  List<Widget> content = listPokemons
+      .map((e) => InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (_) => DescriptionPokemon(
+                          pokemon: e,
+                        )),
+              );
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                  width: 164,
+                  height: 164,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color:
+                        const Color.fromARGB(255, 221, 146, 6).withOpacity(0.7),
+                  ),
+                  child: Column(
+                    children: <Widget>[
+                      const SizedBox(height: 10),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10.0),
+                          child: Text(
+                            e.number.toString(),
+                            style: const TextStyle(
+                                fontSize: 15,
+                                color: Color.fromARGB(255, 63, 62, 62),
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      Container(
+                        height: 80.0,
+                        width: 80.0,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(e.image),
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      Text(
+                        e.name,
+                        style: const TextStyle(
+                            fontSize: 25,
+                            color: Color.fromARGB(255, 63, 62, 62)),
+                      ),
+                    ],
+                  )),
+            ),
+          ))
+      .toList();
+  return ListView(
+    children: [
+      Align(
+        alignment: Alignment.center,
+        child: Wrap(
+          children: content,
+        ),
+      ),
+    ],
+  );
+  //Wrap(direction: Axis.vertical, children: content);
+}
